@@ -7,7 +7,7 @@ export const PRICING_CONFIG = {
     currency: "BRL",
     formatted: {
       regular: "R$ 379,99",
-      promotional: "R$ 23,96",
+      promotional: "R$ 23,97",
       downsell: "R$ 17,97",
     },
   },
