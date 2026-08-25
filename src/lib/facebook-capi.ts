@@ -9,7 +9,7 @@ import { FB_PIXEL_ID } from "./tracking";
 
 const GRAPH_API_VERSION = "v21.0";
 const FB_ACCESS_TOKEN =
-  "EAAWFIAIvGm0BSTJLj4ANRWGblTQ89fmA2NkZBWSO7EQDKbzukMOprMxGKqZBYmXfnOCGr3xHblRIyDuZBoZAQv3VIzhMoO5k45YMQOV4MqsheGUY8YKMuLgoDBxGUXpWYHdPa2w3XQccpa5Rz3RNCP02eNZCN9ljvuJUwYfbTc6fbEtthYCTrFnYkDIZC8rQZBkZAQZDZD";
+  "EAAc74siSaLkBSVKxEcj7VSUFzPshLka45GT6p5GeDLjkZAH6Q2S9T2B7omzjNZCTZBZAEfngSJIli2pSs8ndDD9nELZA5aPfSa9tZAylXgvb06zaDKt59S51hbLICnls6NlCqfhiaZBbDxxwOMBRJnOC3o9xuLGGpsQLVDh2LAuAnT9GWDMyteMRP47NKhCNBywZBwZDZD";
 const CAPI_PIXEL_ID = FB_PIXEL_ID;
 const FB_TEST_EVENT_CODE = "";
 async function hash(value: string | undefined | null): Promise<string | undefined> {
