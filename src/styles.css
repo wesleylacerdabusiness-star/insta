@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-instagram-gradient-start: oklch(0.75 0.15 60);
+  --color-instagram-gradient-end: oklch(0.6 0.2 330);
+  
+  --animate-scroll-l2r: scrollLeftToRight 25s linear infinite;
+  --animate-scroll-r2l: scrollRightToLeft 25s linear infinite;
+  --animate-scroll-avatars: scrollAvatars 15s linear infinite;
+  --animate-blink: blink 1s infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-custom: pulse-custom 2s infinite;
+  --animate-pulse-green: pulseGreen 1.5s infinite;
+  --animate-warning-glow: warningGlow 2.5s infinite alternate ease-in-out;
+  --animate-warning-pulse: warningPulse 1.5s infinite ease-in-out;
+  --animate-pop-in: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  --animate-card-glow: cardGlow 3s infinite alternate;
+  --animate-slide-down: slideDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes scrollLeftToRight { 
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-50%); } 
+  }
+  @keyframes scrollRightToLeft { 
+    0% { transform: translateX(-50%); } 
+    100% { transform: translateX(0); } 
+  }
+  @keyframes scrollAvatars {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes blink { 
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; } 
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes pulse-custom {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 209, 55, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(76, 209, 55, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(76, 209, 55, 0); }
+  }
+  @keyframes pulseGreen {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+  @keyframes warningGlow {
+    0% { box-shadow: 0 4px 10px rgba(220, 39, 67, 0.08); border-color: rgba(220, 39, 67, 0.2); }
+    100% { box-shadow: 0 6px 18px rgba(220, 39, 67, 0.3); border-color: rgba(220, 39, 67, 0.45); }
+  }
+  @keyframes warningPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  @keyframes popIn {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes cardGlow {
+    0% { box-shadow: 0 10px 30px rgba(0,0,0,0.05), 0 0 10px rgba(210, 39, 67, 0.1); }
+    100% { box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 40px rgba(210, 39, 67, 0.6); }
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Varredura de brilho dos skeletons de imagem (ver SkeletonImage.tsx) */
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.99 0.005 80); /* #fafafa-ish */
+  --foreground: oklch(0.2 0.02 260); /* #262626-ish */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 260);
+  --primary: oklch(0.6 0.18 330);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: oklch(0.2 0.02 260);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.6 0.02 250);
+  --accent: oklch(0.96 0.01 250);
+  --accent-foreground: oklch(0.2 0.02 260);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.93 0.01 250);
+  --input: oklch(0.93 0.01 250);
+  --ring: oklch(0.7 0.15 330);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@utility instagram-text {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility instagram-bg {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes security-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(220, 39, 67, 0);
+    border-color: var(--color-border);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(220, 39, 67, 0.15);
+    border-color: rgba(220, 39, 67, 0.3);
+  }
+}
+
+@keyframes pulseCTA {
+  0% { transform: scale(1); box-shadow: 0 10px 30px rgba(220, 39, 67, 0.35); }
+  50% { transform: scale(1.05); box-shadow: 0 15px 45px rgba(220, 39, 67, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 10px 30px rgba(220, 39, 67, 0.35); }
+}
+
+@keyframes gradientGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes stalkerCardGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(240, 148, 51, 0.1), 0 0 24px rgba(220, 39, 67, 0.05); }
+  50% { box-shadow: 0 0 20px rgba(240, 148, 51, 0.2), 0 0 40px rgba(131, 58, 180, 0.1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes gifPitchGlow {
+  0%, 100% { box-shadow: 0 0 6px rgba(220, 39, 67, 0.15), 0 0 12px rgba(188, 24, 136, 0.1); }
+  50% { box-shadow: 0 0 12px rgba(220, 39, 67, 0.3), 0 0 24px rgba(188, 24, 136, 0.2); }
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.6s ease;
+}
+
+@utility animate-security-pulse {
+  animation: security-pulse 2.5s infinite ease-in-out;
+}
+
+@utility animate-pulse-cta {
+  animation: pulseCTA 2s infinite ease-in-out;
+}
+
+@utility animate-stalker-glow {
+  animation: stalkerCardGlow 4s ease-in-out infinite;
+}
+
+@utility animate-pitch-glow {
+  animation: gifPitchGlow 4s ease-in-out infinite;
+}
+
+@utility animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
