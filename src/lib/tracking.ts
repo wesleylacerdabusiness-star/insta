@@ -1,4 +1,4 @@
-export const FB_PIXEL_ID = "1328623799342782";
+export const FB_PIXEL_ID = "2612945209143453";
 
 export const UTMIFY_TOKEN = "1S2lr6ak2LUaFMGqIJSR3YiFMFeSmflmMqzK";
 export interface UtmParams {
