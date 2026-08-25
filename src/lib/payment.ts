@@ -50,7 +50,7 @@ export interface PixChargeData {
 
 const TICHUPAY_API_KEY =
   process.env["TICHUPAY_API_KEY"] ||
-  "tichu_live_3c810571cfb532b92da8f01e702e70ca95e43afad2c36842fccc7cbb3c6825ec";
+  "tichu_live_9af8800dadd2505923948af11e44d8db6726be656719a0aaf53bcc10cd572e75";
 
 const TICHUPAY_BASE_URL = "https://tichupay.com/api/pix";
 
