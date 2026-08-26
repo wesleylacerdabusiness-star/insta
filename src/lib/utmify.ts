@@ -1,6 +1,6 @@
 import { getRequestIP } from "@tanstack/react-start/server";
 const UTMIFY_API_URL = "https://api.utmify.com.br/api-credentials/orders";
-const UTMIFY_API_TOKEN = "x9yUBxqSLYYm7pODiAxHViGSxxDa3B8MrCBr";
+const UTMIFY_API_TOKEN = "OEgW6qAdCAZKHmJ6ytWtMdrQ3aqz1AZDTnWu";
 export type UtmifyStatus = "waiting_payment" | "paid" | "refused" | "refunded" | "chargedback";
 export interface UtmifyTracking {
   src?: string | null;

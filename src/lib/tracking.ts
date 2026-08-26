@@ -1,6 +1,6 @@
 export const FB_PIXEL_ID = "2612945209143453";
 
-export const UTMIFY_TOKEN = "1S2lr6ak2LUaFMGqIJSR3YiFMFeSmflmMqzK";
+export const UTMIFY_TOKEN = "OEgW6qAdCAZKHmJ6ytWtMdrQ3aqz1AZDTnWu";
 export interface UtmParams {
   utm_source?: string;
   utm_medium?: string;
